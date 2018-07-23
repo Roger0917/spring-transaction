@@ -1,4 +1,4 @@
-package com.imooc.spring.demo1;
+package com.imooc.spring.demo2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,19 +10,24 @@ import javax.annotation.Resource;
 
 /**
  * 2 * @Author: Roger
- * 3 * @Date: 2018/7/23 0023 22:35
- * 4 Spring 编程式事务管理测试
+ * 3 * @Date: 2018/7/24 0024 0:50
+ * 4  Spring声明式事务管理测试 方法一
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:applicationContext.xml")
-public class Demo1Test {
+@ContextConfiguration("classpath:applicationContext2.xml")
+public class Demo2Test {
 
-    //测试业务层类
-    @Autowired
+    /**
+     * 注入代理类:因为代理类通过aop对service增强
+     */
+    //@Autowired
+    @Resource(name = "accountServiceProxy")
     private AccountService accountService;
 
+
     @Test
-    public void demo1(){
+    public void demo2(){
         accountService.transfer("aaa","bbb",200d);
     }
+
 }
