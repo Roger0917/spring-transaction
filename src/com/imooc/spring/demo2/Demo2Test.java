@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 /**
  * 2 * @Author: Roger
  * 3 * @Date: 2018/7/24 0024 0:50
- * 4  Spring声明式事务管理测试 方法一
+ * 4  Spring声明式事务管理测试 基于TransactionProxyFactoryBean
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext2.xml")
